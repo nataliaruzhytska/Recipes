@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+    <p><h3>Category Name: {{ category.name }}</h3></p>
+   <ul>
+    {{ recipe.get_recipes }}
+        {% for obj in object_list %}
+             <li> <a href="{% url 'recipe_detail' recipe.category %}">
+                    {{ recipe.title}} </a>
+             </li>
+        {% endfor %}
+        </ul>
+{% endblock %}
